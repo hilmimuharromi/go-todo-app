@@ -11,6 +11,11 @@ func SetupRouters() {
 		c.JSON(fiber.Map{"data": "pong"})
 		return nil
 	})
+
+	app.Get("/health", func(c *fiber.Ctx) error {
+		c.JSON(fiber.Map{"data": "server is running"})
+		return nil
+	})
 	api := app.Group("/api/v1")
 
 	api.Post("/login", handlers.Login)
