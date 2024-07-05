@@ -12,7 +12,7 @@ func SetupRouters() {
 		return nil
 	})
 
-	app.Get("/health", func(c *fiber.Ctx) error {
+	app.Get("/health-check", func(c *fiber.Ctx) error {
 		c.JSON(fiber.Map{"data": "server is running"})
 		return nil
 	})
