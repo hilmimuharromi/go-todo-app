@@ -1,0 +1,17 @@
+on: push
+branch: master
+
+jobs:
+  launch_jenkins_job:
+    name: trigger jenkins job
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Trigger Jenkins Job
+        uses: sbitio/trigger-jenkins-job@master
+        with:
+          JENKINS_USER: ${{ secrets.JENKINS_USER }}
+          JENKINS_TOKEN: ${{ secrets.JENKINS_TOKEN }}
+          JENKINS_HOST: ${{ secrets.JENKINS_HOST }}
+          JENKINS_JOB: ${{ secrets.JENKINS_JOB }}
+          JENKINS_PARAMS: ${{ secrets.JENKINS_PARAMS }}
