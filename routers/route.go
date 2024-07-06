@@ -8,7 +8,7 @@ import (
 func SetupRouters() {
 	app := fiber.New()
 	app.Get("/ping", func(c *fiber.Ctx) error {
-		c.JSON(fiber.Map{"data": "pong test bro"})
+		c.JSON(fiber.Map{"data": "pong test bro test"})
 		return nil
 	})
 
