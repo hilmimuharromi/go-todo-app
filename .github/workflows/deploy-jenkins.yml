@@ -1,5 +1,6 @@
-on: push
-branch: master
+on:
+  push:
+    branch: staging
 
 jobs:
   launch_jenkins_job:
