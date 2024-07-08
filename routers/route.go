@@ -9,6 +9,7 @@ func SetupRouters() {
 	app := fiber.New()
 	app.Get("/ping", func(c *fiber.Ctx) error {
 		c.JSON(fiber.Map{"data": "pong test post staging"})
+		return nil
 	})
 
 	app.Get("/health-check", func(c *fiber.Ctx) error {
