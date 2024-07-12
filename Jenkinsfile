@@ -29,7 +29,7 @@ pipeline {
         stage('Running Container') {
             steps {
                 echo " ============================== Starting Run Project =============================="
-            sh 'docker container run --name container-go-todo-app --network host --rm --tty -e PORT=8000 -p 8000:8000 go-todo-app:latest'
+            sh 'docker container run -d --name container-go-todo-app --network host --rm --tty -e PORT=8000 -p 8000:8000 go-todo-app:latest'
             }
         }
     }
