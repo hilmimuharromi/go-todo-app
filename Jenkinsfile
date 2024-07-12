@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Pulling latest code') {
             steps {
-                echo " ============================== Starting Pulling Code  =============================="
+                echo " ============================== Starting Pulling Code  $agentLabel=============================="
             checkout scmGit(branches: [[name: BRANCH_NAME]], extensions: [], userRemoteConfigs: [[credentialsId: 'hilmi-github', url: 'https://github.com/hilmimuharromi/go-todo-app']])
             }
         }
