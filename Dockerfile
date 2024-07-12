@@ -1,11 +1,9 @@
 # Start from golang:1.21-alpine base image
-FROM golang:1.21-alpine
+FROM golang:1.22.2-alpine
 
 # The latest alpine images don't have some tools like (`git` and `bash`).
 # Adding git & bash  to the image
-RUN apk update && apk upgrade && \
-    apk add --no-cache bash git
-
+RUN apk update && apk upgrade  && apk add --no-cache bash git
 # Add Maintainer Info
 LABEL maintainer="Hilmi Muharromi <hilmimuharrom@gmail.com>"
 
