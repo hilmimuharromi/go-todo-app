@@ -18,6 +18,7 @@ pipeline {
           stage('Pre build') {
             steps {
                 echo " ============================== Starting Pre Build =============================="
+                sh 'docker rmi go-todo-app:latest'
             }
         }
         stage('Build') {
