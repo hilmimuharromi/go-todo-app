@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Pulling latest code') {
             steps {
-                echo " ============================== Starting Pulling Code  =============================="
+                echo " ============================== Starting Pulling latest Code  $agentLabel=============================="
             checkout scmGit(branches: [[name: BRANCH_NAME]], extensions: [], userRemoteConfigs: [[credentialsId: 'hilmi-github', url: 'https://github.com/hilmimuharromi/go-todo-app']])
             }
         }
@@ -29,7 +29,7 @@ pipeline {
         stage('Running Container') {
             steps {
                 echo " ============================== Starting Run Project =============================="
-            sh 'docker container run --name container-go-todo-app --network host --rm -it -e PORT=8000 -p 8000:8000 go-todo-app:latest'
+            sh 'docker container run -d --name container-go-todo-app --network host --rm --tty -e PORT=8000 -p 8000:8000 go-todo-app:latest'
             }
         }
     }
