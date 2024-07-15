@@ -35,4 +35,9 @@ pipeline {
             }
         }
     }
+    post {
+    success {
+        discordSend description: '', footer: '', image: '', link: '', result: 'env.BUILD_URL', scmWebUrl: '', thumbnail: '', title: 'Notification build from : env.JOB_NAME', webhookURL: 'https://discord.com/api/webhooks/1262269602797322250/zAxSnczWUpFDw6ccb1i9Xfu_vmfbXSemDR7sAxiSZCof2Mwet2E_J1OWK_V_Us5aSMnx'
+    }
+    }
 }
