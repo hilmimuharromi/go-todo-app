@@ -8,7 +8,7 @@ import (
 func SetupRouters() {
 	app := fiber.New()
 	app.Get("/", func(c *fiber.Ctx) error {
-		c.JSON(fiber.Map{"data": "your server is running"})
+		c.JSON(fiber.Map{"data": "your server is running bro"})
 		return nil
 	})
 	app.Get("/ping", func(c *fiber.Ctx) error {
