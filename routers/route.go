@@ -12,7 +12,7 @@ func SetupRouters() {
 		return nil
 	})
 	app.Get("/ping", func(c *fiber.Ctx) error {
-		c.JSON(fiber.Map{"data": "ping pong post staging"})
+		c.JSON(fiber.Map{"data": "ping pong"})
 		return nil
 	})
 
