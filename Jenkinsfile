@@ -35,4 +35,12 @@ pipeline {
             }
         }
     }
+    post {
+    success {
+        discordSend description: "deploy is success to branch $env.BRANCH_NAME", footer: '', image: '', link: '', result: env.BUILD_URL, scmWebUrl: '', thumbnail: '', title: "Notification success build from : $env.JOB_NAME", webhookURL: env.DISCORD_URL
+    }
+    failure {
+             discordSend description: "deploy is failed to branch $env.BRANCH_NAME", footer: '', image: '', link: '', result: env.BUILD_URL, scmWebUrl: '', thumbnail: '', title: "Notification failed build from : $env.JOB_NAME", webhookURL: env.DISCORD_URL
+         }
+    }
 }
