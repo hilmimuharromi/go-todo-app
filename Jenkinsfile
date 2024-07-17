@@ -37,10 +37,10 @@ pipeline {
     }
     post {
     success {
-        discordSend description: "success deploy from author $env.CHANGE_AUTHOR in branch $env.BRANCH_NAME", footer: '', image: '', link: '', result: env.BUILD_URL, scmWebUrl: '', thumbnail: '', title: "Notification success build from : $env.JOB_NAME", webhookURL: env.DISCORD_URL
+        discordSend description: "deploy is success to branch $env.BRANCH_NAME", footer: '', image: '', link: '', result: env.BUILD_URL, scmWebUrl: '', thumbnail: '', title: "Notification success build from : $env.JOB_NAME", webhookURL: env.DISCORD_URL
     }
     failure {
-             discordSend description: "failed deploy from author $env.CHANGE_AUTHOR in branch $env.BRANCH_NAME", footer: '', image: '', link: '', result: env.BUILD_URL, scmWebUrl: '', thumbnail: '', title: "Notification failed build from : $env.JOB_NAME", webhookURL: env.DISCORD_URL
+             discordSend description: "deploy is failed to branch $env.BRANCH_NAME", footer: '', image: '', link: '', result: env.BUILD_URL, scmWebUrl: '', thumbnail: '', title: "Notification failed build from : $env.JOB_NAME", webhookURL: env.DISCORD_URL
          }
     }
 }
